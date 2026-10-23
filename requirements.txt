@@ -1,0 +1,12 @@
+# Core runtime dependencies
+pydantic>=2.0.0
+rich>=13.0.0
+streamlit>=1.30.0
+
+# Optional edge ASR & acoustic acceleration
+# faster-whisper>=1.0.0
+# onnxruntime>=1.16.0
+# scipy>=1.11.0
+
+# Testing & Quality
+pytest>=7.0.0

@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "field-to-record"
+version = "0.1.0"
+description = "Voice-to-Structured Clinical Note Generator for Harsh Pre-Hospital EMS Environments"
+readme = "README.md"
+authors = [
+    { name = "Vikas Kumar Singh" }
+]
+license = "Apache-2.0"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Healthcare Industry",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "pydantic>=2.0.0",
+    "rich>=13.0.0",
+    "streamlit>=1.30.0",
+]
+
+[project.optional-dependencies]
+audio = [
+    "faster-whisper>=1.0.0",
+    "onnxruntime>=1.16.0",
+    "scipy>=1.11.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+field-to-record = "field_to_record.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["field_to_record*"]
